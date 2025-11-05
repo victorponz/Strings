@@ -10,8 +10,8 @@ public class Alfabetica {
 		return true;
 	}
 	public static void main(String[] args) {
-		String palabra =  "hola";
-		if ( palabra.length() > 0) {
+		String palabra =  Utilidades.leerCadena("Introduce una palabra");
+		if ( !palabra.isEmpty()) {
 			if(esAlfabetica(palabra)) {
 				System.out.println("La palabra es alfabética");
 			}
