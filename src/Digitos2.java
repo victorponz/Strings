@@ -1,13 +1,15 @@
 public class Digitos2 {
 	public static int contarNumeros(String[] palabras) {
 		int numeros = 0;
+		String palabra;
 		boolean esNumero;
 		// ahora recorremos cada palabra para comprobar si son todo números
-		for (String palabra : palabras) {
+		for (int i = 0; i < palabras.length; i++) {
+			palabra = palabras[i];
             //Suponemos que sí que lo es
 			esNumero = true;
-			for (int i = 0; i < palabra.length(); i++) {
-				if (!(Character.isDigit(palabra.charAt(i)))) {
+			for (int j = 0; i < palabra.length(); j++) {
+				if (!(Character.isDigit(palabra.charAt(j)))) {
                     //Probamos que no lo es
 					esNumero = false;
 					break;
