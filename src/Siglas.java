@@ -1,11 +1,11 @@
 public class Siglas {
 	/*
-	 * Realiza un programa que lea un frase y la convierta en unas siglas. Por
+	 * Realiza un programa que lea una frase y la convierta en sus siglas. Por
 	 * ejemplo, Escuela Oficial de Idiomas, se convierte en EOI.
 	 */
-	public static String siglas(String[] palabras) {
+	public static String siglas(String frase) {
 		String siglas = "";
-
+		String[] palabras = frase.split("\\s+");
 		for (String palabra : palabras) {
 			char letra = palabra.charAt(0);
 			if (Character.isUpperCase(letra)) {
@@ -16,7 +16,7 @@ public class Siglas {
 		return siglas;
 	}
 	public static void main(String[] args) {
-    	String solucion = siglas(Utilidades.dividirEnPalabras(Utilidades.leerCadena("Introduce texto")));
+    	String solucion = siglas("");
 		System.out.println(solucion);
 	}
 }

@@ -1,16 +1,19 @@
 public class Alfabetica {
 
 	public static boolean esAlfabetica(String cadena) {
-		//Fijáos que empieza en 1
-		for(int i = 1; i < cadena.length(); i++){
-			if(cadena.charAt(i) < cadena.charAt(i-1)) {
+		// Recorremos todo el array comparando un carácter con el siguiente. Si el carácter primero es mayor, la palabra
+		// no es alfabética y acabamos.
+		// Java compara los caracteres como si fuera un diccionario, ordenado de la `a` a la `z`
+		// Llegamos a `cadena.length() - 1` porque el último no tiene siguiente
+		for(int i = 0; i < cadena.length() - 1; i++){
+			if(cadena.charAt(i) > cadena.charAt(i+1)) {
 				return false;
 			}
 		}
 		return true;
 	}
 	public static void main(String[] args) {
-		String palabra =  Utilidades.leerCadena("Introduce una palabra");
+		String palabra =  "amor";
 		if ( !palabra.isEmpty()) {
 			if(esAlfabetica(palabra)) {
 				System.out.println("La palabra es alfabética");

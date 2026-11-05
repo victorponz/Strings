@@ -1,18 +1,25 @@
 public class Anagrama {
-    public static boolean esAnagrama(String original, String comparar){
+    public static boolean esAnagrama(String original, String anagrama){
         boolean esta;
-        if (original.length() != comparar.length()) return false;
+        String aux = "";
+        // Si no tienen la misma cantidad de letras, es imposible que sea anagramas
+        if (original.length() != anagrama.length()) return false;
 
         for (int i = 0; i < original.length(); i++) {
+            // Busco el carácter iésimo de la palabra original
             esta = false;
-            for (int j = 0; j < comparar.length(); j++) {
-                if (original.charAt(i) == comparar.charAt(j)){
+            for (int j = 0; j < anagrama.length(); j++) {
+                // Y con ese carácter original, busco si está el de la cadena a comprobar
+                if (original.charAt(i) == anagrama.charAt(j)){
+                    // Si lo encuentro, ya no busco más
                     esta = true;
+                    // Y me guardo ese carácter para asegurarme de que
+                    aux += anagrama.charAt(j);
                     break;
                 }
             }
             if (!esta) return false;
         }
-        return true;
+        return (aux.length() == original.length());
     }
 }
