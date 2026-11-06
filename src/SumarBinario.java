@@ -1,3 +1,5 @@
+import java.io.CharArrayWriter;
+
 public class SumarBinario {
 	public static String sumaBinario(String cad1, String cad2){
 	    String numeroLargo, numeroCorto;
@@ -20,7 +22,7 @@ public class SumarBinario {
         for (int i = numeroLargo.length() -1; i >= 0; i--) {
             if (i - diferenciaDigitos >= 0) {
                 //El segundo dígito a sumar es el correspondiente al número corto
-                b = Integer.parseInt("" + numeroCorto.charAt(i - diferenciaDigitos));
+                b = Character.getNumericValue(numeroCorto.charAt(i - diferenciaDigitos));
             }
             else {
                 //En este caso el segundo dígito es siempre 0, porque ya no quedan
@@ -28,7 +30,7 @@ public class SumarBinario {
             }
             
             //El primer número a sumar siempre es el del número más largo
-            a = Integer.parseInt("" + numeroLargo.charAt(i));
+            a = Character.getNumericValue(numeroLargo.charAt(i));
             //Sumamos y comprobamos el acarreo
             int suma = acarreo + a + b;
 
@@ -58,6 +60,7 @@ public class SumarBinario {
 	      if (1 == acarreo) {
 	    	  resultado = "1" + resultado;
 	      }
+
 	      return resultado;
 	}
 	
