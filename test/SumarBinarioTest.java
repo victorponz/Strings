@@ -10,6 +10,6 @@ class SumarBinarioTest {
     }
     @Test
     void conNumeroDistintoDeDigitos() {
-        assertEquals("1111", SumarBinario.sumaBinario("1000", "111"));
+        assertEquals("1011", SumarBinario.sumaBinario("101", "110"));
     }
 }
