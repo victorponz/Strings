@@ -25,8 +25,8 @@ public class SumarBinario {
             //Sumamos los números más el acarreo
             int suma = acarreo + a + b;
 
-            resultado = ((suma % 2 == 0) ? "0" : "1") + resultado; 
-            acarreo = (suma > 1 ? 1 : 0) ;
+            resultado = (suma % 2) + resultado; // Dara 0 cuando la suma sea 0 o 2
+            acarreo = suma / 2; // Dará 1 cuando la suma sea 2 o 3
             /* Lo de arriba es una forma resumida de:
             * if (suma == 0) {
                 // En este caso los tres valores eran 0, por lo que el resultado es 0 y el acarreo 0
